@@ -7,7 +7,7 @@ export const Navbar = () => {
         <nav>
             <div>
                 <img src="/images/logo.svg" alt="logo" />
-                <p className="font-bold">BB's Portfolio</p>
+                <p className="font-bold">Portfolio_BB</p>
                 <ul>
                     {navLinks.map(({id, name}) => (
                        <li key={id}>{name}</li>
