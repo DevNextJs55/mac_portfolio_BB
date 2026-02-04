@@ -1,4 +1,3 @@
-import React from 'react'
 import WindowWrapper from "#hoc/WindowWrapper.jsx";
 
 const Photos = () => {
@@ -16,4 +15,4 @@ const Photos = () => {
 }
 
 const PhotosWindow = WindowWrapper(Photos, "photos")
-export default Photos
+export default PhotosWindow

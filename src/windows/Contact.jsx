@@ -1,20 +1,39 @@
 import React from 'react'
 import WindowWrapper from "#hoc/WindowWrapper.jsx";
+import {WindowControls} from "#components/index.js";
+import {socials} from "#constants/index.js";
 
 const Contact = () => {
     return (
         <>
            <div id="window-header">
-               <p>Window Controls</p>
+               <WindowControls target="contact" />
                <h2>Contact</h2>
            </div>
-           <div>
-               Contact Window
+           <div className="p-5 space-y-5">
+                <img src="/images/adrian.jpg"
+                     alt="Adrian"
+                     className="rounded-circle"
+                />
+               <h3>Let's Connect</h3>
+               <p>Got an idea? A bug to squash? or just wanna talk tech? I'm in.</p>
+
+               <ul>
+                   {socials.map(({id,bg,link, icon, text }) =>(
+                       <li key={id} style={{backgroundColor:bg}}>
+                           <a href={link} target="_blank" rel="noopener noreferrer" title={text} >
+                               <img src={icon} alt={text} className="size-5" />
+                               <p>{text}</p>
+                           </a>
+
+                       </li>
+                   ))}
+               </ul>
            </div>
 
         </>
     )
 }
 
-const ContactWindow = WindowWrapper("Contact", "contact")
-export default Contact
+const ContactWindow = WindowWrapper(Contact, "contact")
+export default ContactWindow
